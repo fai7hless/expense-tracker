@@ -40,14 +40,14 @@ public class Expense {
 
     @Override
     public String toString() {
-        return "Expense [amount=" + amount + ", description=" + description + ", id=" + id + "]";
+        return "Expense "+ id +" [" + amount + ", " + description + "]";
     }
 
     public String toCSV(){
         return id + "," + description + "," + amount + "," + date;
     }
 
-    public Expense fromCSV(String csv){
+    public static Expense fromCSV(String csv){
         String[] values = csv.split(",");
         int id = Integer.parseInt(values[0]);
         String description = values[1];
